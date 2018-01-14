@@ -2,7 +2,6 @@ set nocompatible
 set exrc
 filetype off 
 
-set runtimepath+=~/.vim_runtime
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -16,11 +15,15 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mkitt/tabline.vim'
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
+
+let mapleader=","
 
 filetype plugin on
 filetype plugin indent on
@@ -39,17 +42,17 @@ map <S-b> :make cheetah_only<cr>
 map <C-w>{ :pc!<cr>
 map <leader>ne :cnext
 
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+map <C-x>x diw
+map <C-x>c yiw
+map <C-x>v ciw<C-r>0<ESC>
 
 set number
 set relativenumber
+syntax on
 
 set tags=./tags;
 
-let g:clang_format#command='clang-format-3.9'
+let g:clang_format#command='clang-format'
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -81,6 +84,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-AirlineTheme luna
+colorscheme onedark
+let g:airline_theme="luna"
 
 set secure
