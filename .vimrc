@@ -17,6 +17,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mkitt/tabline.vim'
+Plugin 'vim-scripts/gtags.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
@@ -28,8 +33,10 @@ let mapleader=","
 filetype plugin on
 filetype plugin indent on
 
+set noswapfile
 set splitbelow
 set splitright
+set encoding=utf-8
 
 map <F8> :TagbarToggle<cr>
 map <C-t><up> :tabr<cr>
@@ -53,6 +60,9 @@ syntax on
 set tags=./tags;
 
 let g:clang_format#command='clang-format'
+
+" YCM use ctags
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " air-line
 let g:airline_powerline_fonts = 1
