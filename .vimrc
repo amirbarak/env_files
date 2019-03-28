@@ -1,12 +1,13 @@
-set nocompatible 
+set nocompatible
 set exrc
-filetype off 
+filetype off
 
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
+Plugin 'junegunn/fzf.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'szw/vim-tags'
 Plugin 'Tagbar'
@@ -22,6 +23,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'
@@ -29,6 +32,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 let mapleader=","
+set rtp+=~/.fzf
 
 filetype plugin on
 filetype plugin indent on
@@ -48,6 +52,8 @@ map <C-w><Bar> :vsp<cr>
 map <S-b> :make cheetah_only<cr>
 map <C-w>{ :pc!<cr>
 map <leader>ne :cnext
+map <leader>t :FZF<cr>
+map <leader>nn :NERDTreeToggle<cr>
 
 map <C-x>x diw
 map <C-x>c yiw
