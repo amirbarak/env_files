@@ -12,3 +12,14 @@ Powerline for TMux:
 3. Run install.sh
 4. Restart tmux
 
+Vim:
+1. clone vim into this dir
+2. run vim_makeconfig.sh
+3. run vim_install.sh
+
+Vim env:
+1. run fzf_install.sh
+2. install YouCompleteMe, following the guide from github. That stuff is difficult man
+
+Additional things:
+1. run docker-clean_install.sh
