@@ -20,6 +20,7 @@ Vim:
 Vim env:
 1. run fzf_install.sh
 2. install YouCompleteMe, following the guide from github. That stuff is difficult man
+3. run fd_install.sh
 
 Additional things:
 1. run docker-clean_install.sh
