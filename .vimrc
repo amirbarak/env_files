@@ -7,11 +7,12 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'wincent/command-t'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'szw/vim-tags'
 Plugin 'Tagbar'
-Plugin 'ervandew/ag'
+Plugin 'joshdick/onedark.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -20,7 +21,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/gtags.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'jremmen/vim-ripgrep'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree.git'
@@ -54,6 +54,7 @@ map <C-w>{ :pc!<cr>
 map <leader>ne :cnext
 map <leader>t :FZF<cr>
 map <leader>nn :NERDTreeToggle<cr>
+map <C-g> :FzfRg <C-R><C-W><cr>
 
 map <C-x>x diw
 map <C-x>c yiw
@@ -62,10 +63,14 @@ map <C-x>v ciw<C-r>0<ESC>
 set number
 set relativenumber
 syntax on
+set tabstop=4
 
 set tags=./tags;
 
+let g:fzf_command_prefix = 'Fzf'
+
 let g:clang_format#command='clang-format'
+"let g:ycm_server_log_level = 'debug'
 
 " YCM use ctags
 let g:ycm_collect_identifiers_from_tags_files = 1
