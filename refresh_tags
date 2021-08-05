@@ -1,0 +1,25 @@
+flags=""
+CHEETAH_TARGET="cheetah"
+WBOX_TARGET="wbox"
+CMC_TARGET="cmc"
+NCF_TARGET="ncf"
+EM_TARGET="em"
+NOPY="nopython"
+
+for arg in "$@"; do
+	if [ "$arg" == $CHEETAH_TARGET ]; then
+		flags+=" --exclude=src/wbox"
+	elif [ "$arg" == $WBOX_TARGET ]; then
+		flags+=" --exclude=src/cheetah --exclude=src/cmc"
+	elif [ "$arg" == $NOPY ]; then
+		flags+=" --exclude=src/py_packages --exclude=src/tests/utils"
+	elif [ "$arg" == $CMC_TARGET ]; then
+		flags+=" --exclude=src/cheetah --exclude=src/wbox"
+	elif [ "$arg" == $NCF_TARGET ]; then
+		flags+=" --exclude=src/wbox --exclude=src/cheetah --exclude=src/cmc"
+	elif [ "$arg" == $EM_TARGET ]; then
+		flags+=" --exclude=src/wbox --exclude=src/cheetah --exclude=src/cmc"
+	fi
+done
+
+ctags -R --fields=+l --exclude=services $flags .
